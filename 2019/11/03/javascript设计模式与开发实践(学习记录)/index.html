@@ -51,31 +51,32 @@
   };
 </script>
 
-  <meta name="description" content="学习记录">
+  <meta name="description" content="javascript设计模式与开发实践设计模式一般主题就是把变的部分和不变的部分分隔出来 设计模式单例模式单例模式是一种常用的模式，有一些对象我们往往只需要一个，比如线程池、全局缓存、浏览器中的 window 对象等。 单例模式的定义是：保证一个类仅有一个实例，并提供一个访问它的全局访问点。 为什么不用全局变量    它很容易造成命名空间污染，也很容易被不小心覆盖。Douglas Crockfor">
 <meta name="keywords" content="Javascript">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ch2x">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript设计模式与开发实践(学习记录)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5(%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95)&#x2F;index.html">
 <meta property="og:site_name" content="Ch2x">
-<meta property="og:description" content="学习记录">
+<meta property="og:description" content="javascript设计模式与开发实践设计模式一般主题就是把变的部分和不变的部分分隔出来 设计模式单例模式单例模式是一种常用的模式，有一些对象我们往往只需要一个，比如线程池、全局缓存、浏览器中的 window 对象等。 单例模式的定义是：保证一个类仅有一个实例，并提供一个访问它的全局访问点。 为什么不用全局变量    它很容易造成命名空间污染，也很容易被不小心覆盖。Douglas Crockfor">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-03T09:22:07.615Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/11/03/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5(%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95)/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Ch2x</title>
+  <title>javascript设计模式与开发实践(学习记录) | Ch2x</title>
   
 
 
@@ -206,69 +207,10 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/03/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ch2x">
-      <meta itemprop="description" content="学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ch2x">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/03/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/" class="post-title-link" itemprop="url">节流与防抖</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-03 16:57:38 / 修改时间：17:23:43" itemprop="dateCreated datePublished" datetime="2019-11-03T16:57:38+08:00">2019-11-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-          <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, interval</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> last = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>,</span><br><span class="line">            args = <span class="built_in">arguments</span>,</span><br><span class="line">            now = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="keyword">if</span>(now - last &gt;= interval) &#123;</span><br><span class="line">            last = now;</span><br><span class="line">            fn.apply(context, args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, delay</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>,</span><br><span class="line">            args = <span class="built_in">arguments</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(timer) &#123;</span><br><span class="line">            clearTimeout(timer);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        timer = setTimout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            fn.apply(context, args);</span><br><span class="line">        &#125;, delay);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 优化debounce</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, delay</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timer = <span class="literal">null</span>,</span><br><span class="line">        args = <span class="built_in">arguments</span>,</span><br><span class="line">        last = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>,</span><br><span class="line">            now = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(now - last &lt; delay) &#123;</span><br><span class="line">            <span class="keyword">if</span>(timer) &#123;</span><br><span class="line">                clearTimeout(timer);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            timer = setTimout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                fn.apply(context, args);</span><br><span class="line">            &#125;, delay);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            last = now;</span><br><span class="line">            fn.apply(context, args);</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
   
   
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/03/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5(%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -282,8 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/03/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5(%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95)/" class="post-title-link" itemprop="url">javascript设计模式与开发实践(学习记录)</a>
+          javascript设计模式与开发实践(学习记录)
         </h1>
 
         <div class="post-meta">
@@ -308,7 +249,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="javascript设计模式与开发实践"><a href="#javascript设计模式与开发实践" class="headerlink" title="javascript设计模式与开发实践"></a>javascript设计模式与开发实践</h1><p>设计模式一般主题就是把变的部分和不变的部分分隔出来</p>
+        <h1 id="javascript设计模式与开发实践"><a href="#javascript设计模式与开发实践" class="headerlink" title="javascript设计模式与开发实践"></a>javascript设计模式与开发实践</h1><p>设计模式一般主题就是把变的部分和不变的部分分隔出来</p>
 <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>单例模式是一种常用的模式，有一些对象我们往往只需要一个，比如线程池、全局缓存、浏览器中的 window 对象等。</p>
 <p>单例模式的定义是：保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
 <p><strong>为什么不用全局变量</strong><br>    它很容易造成命名空间污染，也很容易被不小心覆盖。Douglas Crockford 多次把全局变量称为 JavaScript 中最糟糕的特性。在对 JavaScript 的创造者<br>Brendan Eich 的访谈中， Brendan Eich 本人也承认全局变量是设计上的失误，是在没有足够的时间思考一些东西的情况下导致的结果。</p>
@@ -345,24 +286,36 @@
 <h3 id="面向对象设计的原则——单一职责原则"><a href="#面向对象设计的原则——单一职责原则" class="headerlink" title="面向对象设计的原则——单一职责原则"></a>面向对象设计的原则——单一职责原则</h3><p>单一职责原则指的是，就一个类（通常也包括对象和函数等）而言，应该仅有一个引起它变<br>化的原因。如果一个对象承担了多项职责，就意味着这个对象将变得巨大，引起它变化的原因可<br>能会有多个。面向对象设计鼓励将行为分布到细粒度的对象之中，如果一个对象承担的职责过多，<br>等于把这些职责耦合到了一起，这种耦合会导致脆弱和低内聚的设计。当变化发生时，设计可能<br>会遭到意外的破坏。</p>
 <h4 id="对象池"><a href="#对象池" class="headerlink" title="对象池"></a>对象池</h4><p>对象池维护一个装载空闲对象的池子，如果需要对象的时候，不是直接 new，而是转从对象池里获取。</p>
 <h4 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.before = <span class="function"><span class="keyword">function</span>(<span class="params"> beforefn </span>)</span>&#123;</span><br><span class="line"> <span class="keyword">var</span> __self = <span class="keyword">this</span>; <span class="comment">// 保存原函数的引用</span></span><br><span class="line"> <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 返回包含了原函数和新函数的"代理"函数</span></span><br><span class="line"> beforefn.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> ); <span class="comment">// 执行新函数，且保证 this 不被劫持，新函数接受的参数</span></span><br><span class="line"> <span class="comment">// 也会被原封不动地传入原函数，新函数在原函数之前执行</span></span><br><span class="line"> <span class="keyword">return</span> __self.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> ); <span class="comment">// 执行原函数并返回原函数的执行结果，</span></span><br><span class="line"> <span class="comment">// 并且保证 this 不被劫持</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Function</span>.prototype.after = <span class="function"><span class="keyword">function</span>(<span class="params"> afterfn </span>)</span>&#123;</span><br><span class="line"> <span class="keyword">var</span> __self = <span class="keyword">this</span>;</span><br><span class="line"> <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">var</span> ret = __self.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> );</span><br><span class="line"> afterfn.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> );</span><br><span class="line"> <span class="keyword">return</span> ret;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/03/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/" rel="prev" title="节流与防抖">
+                  节流与防抖 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -391,6 +344,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript设计模式与开发实践"><span class="nav-number">1.</span> <span class="nav-text">javascript设计模式与开发实践</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式"><span class="nav-number">2.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单例模式"><span class="nav-number">2.0.1.</span> <span class="nav-text">单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#惰性单例指的是在需要的时候才创建对象实例"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">惰性单例指的是在需要的时候才创建对象实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略模式"><span class="nav-number">2.0.2.</span> <span class="nav-text">策略模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#策略模式优点"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">策略模式优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#策略模式缺点"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">策略模式缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代理模式"><span class="nav-number">2.0.3.</span> <span class="nav-text">代理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建缓存代理的工厂"><span class="nav-number">2.0.3.0.1.</span> <span class="nav-text">创建缓存代理的工厂</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器模式"><span class="nav-number">2.0.4.</span> <span class="nav-text">迭代器模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布—订阅模式"><span class="nav-number">2.0.5.</span> <span class="nav-text">发布—订阅模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式"><span class="nav-number">2.0.6.</span> <span class="nav-text">命令模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合模式"><span class="nav-number">2.0.7.</span> <span class="nav-text">组合模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板方法模式"><span class="nav-number">2.0.8.</span> <span class="nav-text">模板方法模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#享元模式"><span class="nav-number">2.0.9.</span> <span class="nav-text">享元模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#职责链模式"><span class="nav-number">2.0.10.</span> <span class="nav-text">职责链模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中介者模式"><span class="nav-number">2.0.11.</span> <span class="nav-text">中介者模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰者模式"><span class="nav-number">2.0.12.</span> <span class="nav-text">装饰者模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态模式"><span class="nav-number">2.0.13.</span> <span class="nav-text">状态模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适配器模式"><span class="nav-number">2.0.14.</span> <span class="nav-text">适配器模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象设计的原则——单一职责原则"><span class="nav-number">2.0.15.</span> <span class="nav-text">面向对象设计的原则——单一职责原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象池"><span class="nav-number">2.0.15.1.</span> <span class="nav-text">对象池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AOP"><span class="nav-number">2.0.15.2.</span> <span class="nav-text">AOP</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
